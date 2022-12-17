@@ -41,7 +41,7 @@ namespace MadsKristensen.ExtensibilityTools.VSCT.Commands
             var dialog = new ImageMonikerDialog(imageService);
 
             var dte = GetService<DTE>();
-            var hwnd = new IntPtr(dte.MainWindow.HWnd);
+            var hwnd = dte.MainWindow.HWnd;
             System.Windows.Window window = (System.Windows.Window)HwndSource.FromHwnd(hwnd).RootVisual;
             dialog.Owner = window;
 
